@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # bin/compile <build-dir> <cache-dir> <env-dir>
-source $BP_DIR/bin/phalcon
+
 install_ext () {
     local ext=$1
     local reason=${2:-}
@@ -311,6 +311,7 @@ This package may only be used as a dev dependency (in 'require-dev')!"
 status "Preparing runtime environment..."
 
 # install this buildpack like a composer package
+source $BP_DIR/bin/phalcon.sh
 # it will contain the apache/nginx/php configs and the boot script
 # TODO: warn if require-dev has the package using a different branch
 shopt -u dotglob # we don't want .git, .gitignore et al
